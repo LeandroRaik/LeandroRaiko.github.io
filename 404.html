@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Título da página</title>
+    <meta charset="utf-8">
+  </head>
+  <script>
+
+$(function() {
+  $(window).resize(function() {
+    $("pre").css({
+      
+        marginTop: $("pre").height() / -2,
+        marginLeft: $("pre").width() / -2
+        
+      });
+  }).resize();
+  
+  $("body").click(function() {
+    if (screenfull.enabled) {
+      screenfull.toggle();
+    }
+  });
+});
+  </script>
+  <style>
+body {
+  margin: 0;
+  background-color: #00A;
+  color: #fff;
+  font-size: 20px;
+  
+  user-select: none;
+  cursor: default;
+  
+}
+pre {
+  margin: auto;
+  display: inline-block;
+  font-size: 1em;
+  font-family: Consolas, "Lucida Console", "Courier New";
+ 
+  position: fixed;
+  top: 10%;
+  left: 20%;
+}
+
+  </style>
+  
+  <body>
+    <pre>A problem has been detected and Windows has been shut down to prevent damage
+        to your computer.
+        
+        The problem seems to be caused by the following file: SPCMDCON.SYS
+        
+        EU_NÃO_FIZ_ESSA_PÁGINA_AINDA_TENTE_A_COMPRE_JÁ
+        
+        If this is the first time you've seen this stop error screen,
+        restart your computer. If this screen appears again, follow
+        these steps:
+        
+        Check to make sure any new hardware or software is properly installed.
+        If this is a new installation, ask your hardware or software manufacturer
+        for any Windows updates you might need.
+        
+        If problems continue, disable or remove any newly installed hardware
+        or software. Disable BIOS memory options such as caching or shadowing.
+        If you need to use Safe Mode to remove or disable components, restart
+        your computer, press F8 to select Advanced Startup Options, and then
+        select Safe Mode.
+        
+        Technical information:
+        
+        *** STOP: 0x00000050 (0xFD3094C2,0x00000001,0xFBFE7617,0x0000 0000)
+        
+        porfavor, só vá na compre já...
+        *** SPCMDCON.SYS - Address FBFE7617 base at FBFE5000, DateStamp 3d6dd67c
+        </pre>
+
+
+  </body>
+</html>

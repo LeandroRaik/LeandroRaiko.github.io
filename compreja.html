@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Título da página</title>
+    <link rel ="stylesheet" href="style.css">
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+  </head>
+  <script>
+      /*
+
+Tinkering around with a fixed nav bar, and changing it based on scroll
+
+
+*/
+
+$(document).ready(function(){
+  $(window).scroll(function(){
+    var scrollTop = $(window).scrollTop();
+    if (scrollTop > 49) {
+        $('body').addClass('header-fixed');
+    } else {
+        $('body').removeClass('header-fixed');
+    }
+    // change the style of the navbar when the user scrolls into the next zone.
+    // get the distance of the 2nd section from the top of the page - height of header.
+    var topOffset = $('#demosection2').offset().top;
+    var headerHeight = $('#topnav').height();
+    var transitionPoint = topOffset - headerHeight;
+    if (scrollTop > transitionPoint) {
+        $('#topnav').addClass('alt-header');
+    } else {
+        $('#topnav').removeClass('alt-header');
+    }
+  });
+});
+
+
+  </script>
+  <style>
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+::selection {
+  background: #000;
+  color: #aaf;
+}
+.alternate ::selection {
+  background: #c00;
+  color: #000;
+}
+
+body {
+  margin: 0;
+  padding: 0px;
+  height: 2000px;
+  font-size: 16px;
+  line-height: 1.5;
+  position: fixed;
+}
+p { 
+    
+    margin: 5px;
+    padding-top: 250px; 
+    padding-left: 500px ;
+
+}
+
+
+.inner {
+  width: 800px;
+  position: relative;
+  margin: 0 auto;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  padding-top: 50px;
+  background: #000;
+  transition: 0.7s all;
+  z-index: 100;
+}
+
+header.alt-header {
+  background: #fff;
+}
+
+.alt-header a {
+  color: #000;
+}
+
+body.header-fixed header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding-top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+li {
+  list-style: none;
+}
+
+nav {
+  overflow: hidden;
+}
+
+nav ul {
+  float: right;
+}
+
+nav li {
+  display: inline;
+  float: left;
+}
+
+nav a {
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  padding: 25px;
+  transition: 0.3s all;
+}
+
+nav a:hover {
+  background: red;
+}
+
+.logo {
+
+  float: left;
+  color: #fff;
+  font-size: 50px;
+  line-height: 50px;
+  transition: 0.7s all;
+}
+
+.alt-header .logo {
+  color: #000;
+}
+
+body.header-fixed .logo {
+  font-size: 30px;
+}
+
+.alternate {
+  background: #000;
+  color: #fff;
+}
+
+section .inner {
+  padding-top: 200px;
+}
+
+
+
+  </style>
+  <body>
+  <header id="topnav">
+    <div class="inner">
+     <h1><a href="index.html"> <div class="logo">Poquin de minas</div></a></h1>
+      <nav role='navigation'>
+          <ul>
+            <li><a href="404.html">SAC</a></li>
+            <li><a href="404.html">Parcerias</a></li>
+            <li><a href="404.html">Sobre nós</a></li>
+        </ul>
+      </header>
+    </nav>
+</div>
+<div class="container">
+    <p>
+    <h2>Nossos Produtos</h2>
+    <div class="row">
+        <div class ="col-md-3">
+        <div class="product-top">
+            <img src="https://imagens.mfrural.com.br/mfrural-produtos-us/299041-297588-1601295-queijo-canastra-meia-cura.jpg">
+            <div class ="overlay">
+             <button type ="button" class="btn btn-secondary" title="Compre com 1 clique"><i class="fa fa-eye"></i></button>  
+             <button type ="button" class="btn btn-secondary" title="Lista de Desejos"><i class="fa fa-heart-o"></i></button>  
+             <button type ="button" class="btn btn-secondary" title="Adicionar ao carrinho"><i class="fa fa-shopping-cart"></i></button>   
+            </div>
+        </div>
+        <div class="product-bottom text-center">
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star" ></i>
+            <i class="fa fa-star-half-o" ></i>
+            <i class="fa fa-star-o" ></i>
+            <h3>Queijo Meia Cura</h3>
+             <h5>R$15,00</h5>
+             </div>
+        
+        
+            </div>
+            <div class ="col-md-3">
+                <div class="product-top">
+                    <img src="https://images.tcdn.com.br/img/img_prod/705452/queijo_tipo_brie_363_1_20190911141006.jpg">
+                    <div class ="overlay">
+                     <button type ="button" class="btn btn-secondary" title="Compre com 1 clique"><i class="fa fa-eye"></i></button>  
+                     <button type ="button" class="btn btn-secondary" title="Lista de Desejos"><i class="fa fa-heart-o"></i></button>  
+                     <button type ="button" class="btn btn-secondary" title="Adicionar ao carrinho"><i class="fa fa-shopping-cart"></i></button>   
+                    </div>
+                </div>
+                <div class="product-bottom text-center">
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star" ></i>
+                    <i class="fa fa-star-half-o" ></i>
+                    <i class="fa fa-star-o" ></i>
+                    <h3>Queijo Brie</h3>
+                     <h5>R$45,00</h5>
+                     </div>
+                
+                
+                    </div>
+                    <div class ="col-md-3">
+                        <div class="product-top">
+                            <img src="https://http2.mlstatic.com/queijo-parmeso-de-minas-premium-meio-curado-artesanal-5kg-D_NQ_NP_762108-MLB31759535037_082019-O.jpg">
+                            <div class ="overlay">
+                             <button type ="button" class="btn btn-secondary" title="Compre com 1 clique"><i class="fa fa-eye"></i></button>  
+                             <button type ="button" class="btn btn-secondary" title="Lista de Desejos"><i class="fa fa-heart-o"></i></button>  
+                             <button type ="button" class="btn btn-secondary" title="Adicionar ao carrinho"><i class="fa fa-shopping-cart"></i></button>   
+                            </div>
+                        </div>
+                        <div class="product-bottom text-center">
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star" ></i>
+                            <i class="fa fa-star-half-o" ></i>
+                            <i class="fa fa-star-o" ></i>
+                            <h3>Queijo Parmesão</h3>
+                             <h5>R$20,00</h5>
+                             </div>
+                        
+                        
+                            </div>
+                            <div class ="col-md-3">
+                                <div class="product-top">
+                                    <img src="https://img.cybercook.com.br/imagens/receitas/51/doce-de-leite-cremoso-8206-600x600.jpg">
+                                    <div class ="overlay">
+                                     <button type ="button" class="btn btn-secondary" title="Compre com 1 clique"><i class="fa fa-eye"></i></button>  
+                                     <button type ="button" class="btn btn-secondary" title="Lista de Desejos"><i class="fa fa-heart-o"></i></button>  
+                                     <button type ="button" class="btn btn-secondary" title="Adicionar ao carrinho"><i class="fa fa-shopping-cart"></i></button>   
+                                    </div>
+                                </div>
+                                <div class="product-bottom text-center">
+                                    <i class="fa fa-star" ></i>
+                                    <i class="fa fa-star" ></i>
+                                    <i class="fa fa-star" ></i>
+                                    <i class="fa fa-star-half-o" ></i>
+                                    <i class="fa fa-star-o" ></i>
+                                    <h3>Doce de leite</h3>
+                                     <h5>R$25,00</h5>
+                                     </div>
+                                    </div>
+                                </p>
+    </div>
+</div>
+
+
+
+
+
+  </body>
+</html>
