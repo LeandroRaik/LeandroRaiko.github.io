@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Título da página</title>
+    <link rel ="stylesheet" href="style.css">
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+  </head>
+  <script>
+      /*
+
+Tinkering around with a fixed nav bar, and changing it based on scroll
+
+
+*/
+
+$(document).ready(function(){
+  $(window).scroll(function(){
+    var scrollTop = $(window).scrollTop();
+    if (scrollTop > 49) {
+        $('body').addClass('header-fixed');
+    } else {
+        $('body').removeClass('header-fixed');
+    }
+    // change the style of the navbar when the user scrolls into the next zone.
+    // get the distance of the 2nd section from the top of the page - height of header.
+    var topOffset = $('#demosection2').offset().top;
+    var headerHeight = $('#topnav').height();
+    var transitionPoint = topOffset - headerHeight;
+    if (scrollTop > transitionPoint) {
+        $('#topnav').addClass('alt-header');
+    } else {
+        $('#topnav').removeClass('alt-header');
+    }
+  });
+});
+
+
+  </script>
+
+  <body>
+  <header id="topnav">
+    <div class="inner">
+     <h1><a href="index.html"> <div class="logo">Poquin de minas</div></a></h1>
+      <nav role='navigation'>
+          <ul>
+            <li><a href="compreja.html">Compre já</a></li>
+            <li><a href="404.html">Parcerias</a></li>
+            <li><a href="404.html">Sobre nós</a></li>
+        </ul>
+      </header>
+    </nav>
+</div>
+<div class="container">
+    <p>
+    <h2>Entre em Contato</h2>
+    <h4>  
+    <ul>
+       <li>example@provider.com</li>
+        <li>+55 11 2392-0987</li>
+        </ul>
+         </h4>
+
+
+
+
+  </body>
